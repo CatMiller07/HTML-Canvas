@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	   <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	   <title>My First HTML5 Canvas</title>
+	   <style>
+	     canvas{
+			 position: absolute;
+			 top: 0;
+			 left: 0;
+			 z-index: -5;
+		 }
+		   #main-title{
+			   color: white;
+			   font-family: 'Ubuntu', sans-serif;
+			   text-align: center;
+			   font-size: 4em;
+		   } 
+		   #main-content{
+			  background-color: rgba(255,255,255,0.6);
+			  max-width: 800px;
+			  margin: 0 auto;
+		   }
+		   .quadrant{
+			   box-sizing: border-box;
+			   width: 50%;
+			   float: left;
+		   } 
+		   #grid-container{
+			   
+		   }
+		   // cancels effects of floats
+		   #grid-container::after{
+			   clear:both;
+			   content:"";
+			   display: block;
+		   }
+	   </style>
+   </head>
+   <body>
+	   <canvas id="canvas"></canvas>
+	   <h1 id="main-title">Welcome to Cathy's Portfolio Page</h1>
+	   <div id="main-content">
+	   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis varius euismod. Mauris sollicitudin vel libero ac vehicula. Sed cursus porta hendrerit. Nulla facilisi. Praesent a orci luctus, facilisis sem id, pharetra erat. Quisque eleifend diam eget urna scelerisque dapibus. Donec euismod est quis dui maximus ullamcorper. Praesent aliquam tellus at ipsum euismod lobortis. Ut accumsan rutrum elit, eget volutpat augue pretium sed.
+	  <div id="grid-container">
+	      <div class="quadrant"><h2>Project  1</h2><br><br><br><br><br></div>
+		   <div class="quadrant"><h2>Project  2</h2><br><br><br><br><br></div>
+		    <div class="quadrant"><h2>Project 3</h2><br><br><br><br><br></div>
+		    <div class="quadrant"><h2>Project 4</h2><br><br><br><br><br></div>
+	   </div>	   
+	   </div>
+	 
+	   <script>
+		   
+		 init();
+		 animate();
+		 window.onresize = init; 
+	      		 
+		   
+		  function init(){
+			 window.WIDTH = window.innerWidth;   //adding window in front of WIDTH makes it global
+		     window.HEIGHT =window.innerHeight;
+			 window.ctx = document.getElementById("canvas").getContext("2d"); 
+			 
+			 if (document.body.clientHeight > window.innerHeight)
+				 window.HEIGHT = document.body.clientHeight;
+			  
+			 
+			 ctx.canvas.width = WIDTH;
+		     ctx.canvas.height= HEIGHT;
+		     ctx.strokeStyle="#000000";  
+		  } 
+		   
+		  function animate() {
+			  ctx.fillStyle = "#333333";	  
+			  ctx.fillRect(0,0,WIDTH,HEIGHT);
+	       // ctx.fillStyle ="#000000";
+			  for(var i=0; i < 20; i++) {
+								 ctx.strokeRect(Math.random()*WIDTH,
+							  Math.random()*HEIGHT,
+							  Math.random()*100,
+							  Math.random()*100);  
+								  }
+			  
+			  
+	  //ctx.strokeRect(step++,step++,50,50);
+			  
+			  window.requestAnimationFrame(animate);
+					  
+			  
+		  }  
+		 
+		
+		 
+		   
+		
+		  
+	   </script>
+   </body>	
+</html>
