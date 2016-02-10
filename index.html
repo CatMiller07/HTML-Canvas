@@ -29,7 +29,7 @@
 		   #grid-container{
 			   
 		   }
-		   // cancels effects of floats
+		   
 		   #grid-container::after{
 			   clear:both;
 			   content:"";
@@ -41,10 +41,10 @@
 	   <canvas id="canvas"></canvas>
 	   <h1 id="main-title">Welcome to Cathy's Portfolio Page</h1>
 	   <div id="main-content">
-	   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis varius euismod. Mauris sollicitudin vel libero ac vehicula. Sed cursus porta hendrerit. Nulla facilisi. Praesent a orci luctus, facilisis sem id, pharetra erat. Quisque eleifend diam eget urna scelerisque dapibus. Donec euismod est quis dui maximus ullamcorper. Praesent aliquam tellus at ipsum euismod lobortis. Ut accumsan rutrum elit, eget volutpat augue pretium sed.
-	  <div id="grid-container">
-	      <div class="quadrant"><h2>Project  1</h2><br><br><br><br><br></div>
-		   <div class="quadrant"><h2>Project  2</h2><br><br><br><br><br></div>
+	  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis varius euismod. Mauris sollicitudin vel libero ac vehicula. Sed cursus porta hendrerit. Nulla facilisi. Praesent a orci luctus, facilisis sem id, pharetra erat. Quisque eleifend diam eget urna scelerisque dapibus. Donec euismod est quis dui maximus ullamcorper. Praesent aliquam tellus at ipsum euismod lobortis. Ut accumsan rutrum elit, eget volutpat augue pretium sed.</p>
+	    <div id="grid-container">
+	        <div class="quadrant"><h2>Wiki Search</h2><br><br><br><br><br></div>
+		    <div class="quadrant"><h2>Project  2</h2><br><br><br><br><br></div>
 		    <div class="quadrant"><h2>Project 3</h2><br><br><br><br><br></div>
 		    <div class="quadrant"><h2>Project 4</h2><br><br><br><br><br></div>
 	   </div>	   
@@ -63,7 +63,7 @@
 			 window.ctx = document.getElementById("canvas").getContext("2d"); 
 			 
 			 if (document.body.clientHeight > window.innerHeight)
-				 window.HEIGHT = document.body.clientHeight;
+				 window.HEIGHT = document.body.clientHeight + 50;
 			  
 			 
 			 ctx.canvas.width = WIDTH;
@@ -80,7 +80,7 @@
 							  Math.random()*HEIGHT,
 							  Math.random()*100,
 							  Math.random()*100);  
-								  }
+			   }
 			  
 			  
 	  //ctx.strokeRect(step++,step++,50,50);
